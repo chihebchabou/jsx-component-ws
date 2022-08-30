@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { Fragment } from 'react';
 
 function App() {
+  const name = 'John Doe';
+
+  const loggedIn = true;
+
+  const greeting = () => `Hello my name is ${name}`;
+  // if (loggedIn === false) {
+  //   return <div>Sorry</div>;
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <h1>Workshop JSX</h1>
+      {/* <p>{loggedIn === true ? greeting() : ''}</p> */}
+      <p>{loggedIn === true && greeting()}</p>
+      <label htmlFor="name">Name:</label>
+      <br />
+      <input type="text" id="name" />
+      <p>{1 + 2}</p>
+    </Fragment>
   );
 }
 
